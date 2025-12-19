@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNA to RNA Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DNA to RNA Converter</h1>
+            <button id="themeToggle" class="theme-btn">🌙</button>
+        </header>
+
+        <div class="main-content">
+            <section class="input-panel">
+                <h2>Input</h2>
+                <textarea id="dnaInput" rows="5" placeholder="Enter DNA sequence (A, T, C, G)"></textarea>
+                <p id="validationFeedback" class="validation"></p>
+                <p id="sequenceStats">Length: 0 | Codons: 0 | GC Content: 0% | Tm: 0°C</p>
+                <div class="toolbar">
+                    <button id="clearBtn">Clear</button>
+                    <button id="randomSeqBtn">Random</button>
+                    <button id="downloadBtn">Download</button>
+                    <button id="exportAllBtn">Export All</button>
+                    <div class="options">
+                        <label><input type="checkbox" id="reverseMode"> RNA to DNA</label>
+                        <label><input type="checkbox" id="showComplement"> Complement</label>
+                        <label><input type="checkbox" id="reverseComplement"> Reverse</label>
+                    </div>
+                </div>
+                <div class="compare-section">
+                    <h3>Compare</h3>
+                    <textarea id="compareInput" rows="2" placeholder="Enter another sequence"></textarea>
+                    <p id="alignmentOutput"></p>
+                </div>
+            </section>
+
+            <section class="output-panel">
+                <h2 id="outputLabel">RNA Sequence</h2>
+                <p id="rnaOutput"></p>
+                <p id="complementOutput" class="complement"></p>
+                <button id="copyBtn" onclick="copyRNA()">Copy</button>
+
+                <details class="output-details">
+                    <summary>Codons & Amino Acids</summary>
+                    <ul id="codonList"></ul>
+                </details>
+                <details class="output-details">
+                    <summary>Protein Sequence</summary>
+                    <p id="proteinOutput"></p>
+                </details>
+                <details class="output-details">
+                    <summary>Open Reading Frames</summary>
+                    <ul id="orfList"></ul>
+                </details>
+                <details class="output-details">
+                    <summary>Restriction Sites</summary>
+                    <ul id="restrictionList"></ul>
+                </details>
+                <details class="output-details">
+                    <summary>Palindromes</summary>
+                    <ul id="palindromeList"></ul>
+                </details>
+                <details class="output-details">
+                    <summary>Base Frequency</summary>
+                    <div id="baseFreqChart" class="chart"></div>
+                </details>
+            </section>
+        </div>
+        
+        <footer>
+            <p>Created with 💡 by Aayushmaan Chakraborty x Ankit Sarkar x Kushagra Tripathi</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
